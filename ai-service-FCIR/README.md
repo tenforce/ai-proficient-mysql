@@ -1,6 +1,7 @@
 This describes the configuration for the FCIR component.
 
-The results database is three tables.
+The results database consists of three tables.
+
 The first table contains a list of additive names with the following columns:
    - additive_name: the name of the additive
    - additive_synonym: the synonym or parent name of the additive (usually the preferred name)
