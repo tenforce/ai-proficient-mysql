@@ -2,11 +2,11 @@ This describes the configuration for the FCIR component.
 
 The results database is three tables.
 The first table contains a list of additive names with the following columns:
-   - additive_name: the name of the additives
+   - additive_name: the name of the additive
    - additive_synonym: the synonym or parent name of the additive (usually the preferred name)
 
 The second table contains a list of lot number names with the following columns:
-   - lot_number_name: the name of the lot numbers
+   - lot_number_name: the name of the lot number
    - additive_name: the additive linked to the lot number
 
 The third table contains the following columns:
