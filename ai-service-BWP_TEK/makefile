@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-SERVICE=exdm
+SERVICE=bwp_tek
 VERSION=1.0.0
 MYSQL_ROOT_PASSWORD=s3cr3t
 
