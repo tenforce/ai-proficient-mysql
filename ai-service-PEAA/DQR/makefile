@@ -1,7 +1,7 @@
 SHELL=/bin/bash
-SERVICE=spaa
+SERVICE=dqr
 VERSION=1.0.0
-MYSQL_ROOT_PASSWORD=mystikoskwdikos
+MYSQL_ROOT_PASSWORD=dontcopythatfloppy
 
 
 build:
