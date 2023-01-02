@@ -1,6 +1,6 @@
 This describes the configuration for the CROM component.
 
-The simulated data is stored in a `CROM_table` with the following columns:
+The simulated data is stored in a `results_table` with the following columns:
 
    - key: Parameter key
    - name: Parameter name

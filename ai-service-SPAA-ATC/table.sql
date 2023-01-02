@@ -89,7 +89,7 @@ CREATE TABLE `SPAA_timeframes` (
 	`EX_INF_Percentage_Line_Speed_Reduction_Setpoint` FLOAT NOT NULL,
 	`EX_INF_Receipt_Line_Speed_Setpoint` FLOAT NOT NULL,
 	`EX_INF_Speed_Pulling_Roller_Actual` FLOAT NOT NULL,
-	`label` TEXT(24) NOT NULL
+	`label` TEXT(24) NOT NULL,
    PRIMARY KEY (`id`)
 );
 
