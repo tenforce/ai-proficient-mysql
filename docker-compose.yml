@@ -12,7 +12,7 @@ services:
       - ${LOCAL_PATH}/service-MYSQL/mysql:/var/lib/mysql
 
   mysql-service-CROM-UL:
-    build: ./ai-service-CROM/
+    build: ./ai-service-CROM-UL/
     image: ai-proficient-mysql:CROM-1.0.0
     container_name: aip-mysql-CROM
     ports:
@@ -23,7 +23,7 @@ services:
       - ${LOCAL_PATH}/service-CROM/mysql:/var/lib/mysql
 
   mysql-service-EXDM-TK:
-    build: ./ai-service-EXDM/
+    build: ./ai-service-EXDM-TK/
     image: ai-proficient-mysql:EXDM-1.0.0
     container_name: aip-mysql-EXDM
     ports:
@@ -34,7 +34,7 @@ services:
       - ${LOCAL_PATH}/service-EXDM/mysql:/var/lib/mysql
 
   mysql-service-EXSM-TK:
-    build: ./ai-service-EXSM/
+    build: ./ai-service-EXSM-TK/
     image: ai-proficient-mysql:EXSM-1.0.0
     container_name: aip-mysql-EXSM
     ports:
@@ -45,7 +45,7 @@ services:
        - ${LOCAL_PATH}/service-EXSM/mysql:/var/lib/mysql
   
   mysql-service-FCIR-TF:
-    build: ./ai-service-FCIR/
+    build: ./ai-service-FCIR-TF/
     image: ai-proficient-mysql:FCIR-1.0.0
     container_name: aip-mysql-FCIR
     ports:
@@ -56,7 +56,7 @@ services:
        - ${LOCAL_PATH}/service-FCIR/mysql:/var/lib/mysql
 
   mysql-service-GHO-IMP:
-    build: ./ai-service-GHO/
+    build: ./ai-service-GHO-IMP/
     image: ai-proficient-mysql:GHO-1.0.0
     container_name: aip-mysql-GHO
     ports:
@@ -67,7 +67,7 @@ services:
        - ${LOCAL_PATH}/service-GHO/mysql:/var/lib/mysql
 
   mysql-service-NRPD-UL:
-    build: ./ai-service-NRPD/
+    build: ./ai-service-NRPD-UL/
     image: ai-proficient-mysql:NRPD-1.0.0
     container_name: aip-mysql-NRPD
     ports:
@@ -78,7 +78,7 @@ services:
        - ${LOCAL_PATH}/service-NRPD/mysql:/var/lib/mysql
 
   mysql-service-NRPP-UL:
-    build: ./ai-service-NRPP/
+    build: ./ai-service-NRPP-UL/
     image: ai-proficient-mysql:NRPP-1.0.0
     container_name: aip-mysql-NRPP
     ports:
@@ -89,7 +89,7 @@ services:
        - ${LOCAL_PATH}/service-NRPP/mysql:/var/lib/mysql
 
   mysql-service-SDDM-IMP:
-    build: ./ai-service-SDDM/
+    build: ./ai-service-SDDM-IMP/
     image: ai-proficient-mysql:SDDM-1.0.0
     container_name: aip-mysql-SDDM
     ports:
@@ -100,7 +100,7 @@ services:
        - ${LOCAL_PATH}/service-SDDM/mysql:/var/lib/mysql
 
   mysql-service-SPAA-ATC:
-    build: ./ai-service-SPAA/
+    build: ./ai-service-SPAA-ATC/
     image: ai-proficient-mysql:SPAA-1.0.0
     container_name: aip-mysql-SPAA
     ports:
@@ -132,4 +132,48 @@ services:
     volumes: 
        - ${LOCAL_PATH}/service-BWP/mysql:/var/lib/mysql
 
+  mysql-service-NVI-IBM:
+    build: ./ai-service-NVI-IBM/
+    image: ai-proficient-mysql:NVI-1.0.0
+    container_name: aip-mysql-NVI
+    ports:
+       - 3315:3306
+    environment: 
+       - MYSQL_ROOT_PASSWORD=s3cr3t
+    volumes: 
+       - ${LOCAL_PATH}/service-NVI/mysql:/var/lib/mysql
+
+  mysql-service-PEAA-AD-IBM:
+    build: ./ai-service-PEAA-AD-IBM/
+    image: ai-proficient-mysql:PEAA-AD-1.0.0
+    container_name: aip-mysql-PEAA-AD
+    ports:
+       - 3316:3306
+    environment: 
+       - MYSQL_ROOT_PASSWORD=s3cr3t
+    volumes: 
+       - ${LOCAL_PATH}/service-PEAA-AD/mysql:/var/lib/mysql
+
+  mysql-service-PEAA-DQR-IBM:
+    build: ./ai-service-PEAA-DQR-IBM/
+    image: ai-proficient-mysql:PEAA-DQR-1.0.0
+    container_name: aip-mysql-PEAA-DQR
+    ports:
+       - 3317:3306
+    environment: 
+       - MYSQL_ROOT_PASSWORD=s3cr3t
+    volumes: 
+       - ${LOCAL_PATH}/service-PEAA-DQR/mysql:/var/lib/mysql
+  
+  mysql-service-PEAA-FSXAI-IBM:
+    build: ./ai-service-PEAA-FSXAI-IBM/
+    image: ai-proficient-mysql:PEAA-FSXAI-1.0.0
+    container_name: aip-mysql-PEAA-FSXAI
+    ports:
+       - 3318:3306
+    environment: 
+       - MYSQL_ROOT_PASSWORD=s3cr3t
+    volumes: 
+       - ${LOCAL_PATH}/service-PEAA-FSXAI/mysql:/var/lib/mysql
+  
 
