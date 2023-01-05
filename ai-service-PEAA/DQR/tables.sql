@@ -38,5 +38,5 @@ CREATE TABLE `DQR_report_variable` (
     `p95` DOUBLE NULL,
     PRIMARY KEY (`id`),
     KEY `dqr_report_id` (`dqr_report_id`),
-    CONSTRAINT `DQR_report_variable_ibfk_1` FOREIGN KEY (`dqr_report_id`) REFERENCES `DQR_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT `DQR_report_variable_FK` FOREIGN KEY (`dqr_report_id`) REFERENCES `DQR_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
