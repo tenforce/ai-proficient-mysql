@@ -15,7 +15,7 @@ CREATE TABLE `FS_XAI_report` (
 	`explainer_expected_or_base_value` DOUBLE NULL,
 	`prediction_from_model` DOUBLE NULL,
 	`prediction_from_adding_shap_values_to_base_value` DOUBLE NULL,
-	`summary_report` BLOB
+	`summary_report` MEDIUMBLOB
    PRIMARY KEY (`id`)
 );
 

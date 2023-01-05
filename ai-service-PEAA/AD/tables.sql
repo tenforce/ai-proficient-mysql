@@ -10,7 +10,7 @@ CREATE TABLE `AD_report` (
 	`threshold` DOUBLE NULL,
 	`anomalies_detected` SMALLINT NULL,
     `isolation_forest_time_aligned_data_filter_counts` DOUBLE NULL,
-	`summary_report` BLOB
+	`summary_report` MEDIUMBLOB
    PRIMARY KEY (`id`)
 );
 
