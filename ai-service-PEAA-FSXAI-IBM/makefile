@@ -22,7 +22,7 @@ insert:
 	docker exec \
 		-e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} \
 		aip-mysql-${SERVICE} bash -c \
-	                   "mysql -u root --password=${MYSQL_ROOT_PASSWORD} -D results_db < /data/insert.sql "
+	                   "mysql -u root --password=${MYSQL_ROOT_PASSWORD} -D results_db < /data/inserts.sql "
 
 test:
 	docker exec \

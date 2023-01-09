@@ -1,4 +1,3 @@
-
 USE `results_db`;
 DROP TABLE IF EXISTS `AD_report`;
 CREATE TABLE `AD_report` (
@@ -10,8 +9,8 @@ CREATE TABLE `AD_report` (
 	`threshold` DOUBLE NULL,
 	`anomalies_detected` SMALLINT NULL,
     `isolation_forest_time_aligned_data_filter_counts` DOUBLE NULL,
-	`summary_report` BLOB,
-   PRIMARY KEY (`id`)
+	`summary_report` MEDIUMBLOB,
+	PRIMARY KEY (`id`)
 );
 
 USE `results_db`;
@@ -20,7 +19,9 @@ CREATE TABLE `AD_report_quasi_constant_variables` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`ad_report_id` INT NOT NULL,
     `variable` NVARCHAR(1024) NULL,
-   PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+    KEY `ad_report_id` (`ad_report_id`),
+    CONSTRAINT `AD_report_quasi_constant_variables_FK` FOREIGN KEY (`ad_report_id`) REFERENCES `AD_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 USE `results_db`;
@@ -37,5 +38,7 @@ CREATE TABLE `AD_report_variable_importance` (
 	`recall` DOUBLE NULL,
 	`f1_score` DOUBLE NULL,
 	`general_score` DOUBLE NULL,
-   PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+    KEY `ad_report_id` (`ad_report_id`),
+    CONSTRAINT `AD_report_variable_importance_FK` FOREIGN KEY (`ad_report_id`) REFERENCES `AD_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
