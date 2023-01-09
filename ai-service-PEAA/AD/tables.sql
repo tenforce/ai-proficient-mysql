@@ -26,7 +26,7 @@ CREATE TABLE `AD_report_quasi_constant_variables` (
 
 USE `results_db`;
 DROP TABLE IF EXISTS `AD_report_decision_tree_method`;
-CREATE TABLE `AD_report_variable_importance` (
+CREATE TABLE `AD_report_decision_tree_method` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`ad_report_id` INT NOT NULL,
     `method` NVARCHAR(1024) NULL,
@@ -40,5 +40,5 @@ CREATE TABLE `AD_report_variable_importance` (
 	`general_score` DOUBLE NULL,
 	PRIMARY KEY (`id`),
     KEY `ad_report_id` (`ad_report_id`),
-    CONSTRAINT `AD_report_variable_importance_FK` FOREIGN KEY (`ad_report_id`) REFERENCES `AD_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT `AD_report_decision_tree_method_FK` FOREIGN KEY (`ad_report_id`) REFERENCES `AD_report` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
