@@ -1,2 +1,2 @@
-USE `results_db`;
+USE results_db;
 select * from results_table ;

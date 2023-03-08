@@ -1,11 +1,9 @@
-USE `results_db`;
-DROP TABLE IF EXISTS `results_table`;
-CREATE TABLE `results_table` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  `executionDate` DATE NOT NULL,
-  `extruding`    BOOLEAN DEFAULT FALSE,
-  `update_time`  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-  
-);
+USE results_db;
+DROP TABLE IF EXISTS results_table;
 
+CREATE TABLE results_table (
+  id INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  Usage  BOOLEAN DEFAULT FALSE,
+  Date   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
