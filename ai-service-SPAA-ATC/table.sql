@@ -1,7 +1,8 @@
 USE `results_db`;
 DROP TABLE IF EXISTS `SPAA_timeframes`;
 CREATE TABLE `SPAA_timeframes` (
-	`id` TIMESTAMP NOT NULL,
+        `id` BIGINT NOT NULL AUTO_INCREMENT,
+	`ts` TIMESTAMP NOT NULL,
 	`DS_Speed_Conveyor1_Actual_V2`  FLOAT NOT NULL,
 	`DS_Speed_Conveyor1_Setpoint_V2` FLOAT NOT NULL,
 	`EX_DC_Cooling_Temperature_Actual` FLOAT NOT NULL,
@@ -90,15 +91,15 @@ CREATE TABLE `SPAA_timeframes` (
 	`EX_INF_Receipt_Line_Speed_Setpoint` FLOAT NOT NULL,
 	`EX_INF_Speed_Pulling_Roller_Actual` FLOAT NOT NULL,
 	`label` TEXT(24) NOT NULL,
-   PRIMARY KEY (`id`)
+         PRIMARY KEY (`id`)
 );
 
 
 USE `results_db`;
 DROP TABLE IF EXISTS `SPAA_reinforcementRCA`;
 CREATE TABLE `SPAA_reinforcementRCA` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`ts_id` TIMESTAMP NOT NULL,
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`ts` TIMESTAMP NOT NULL,
 	`rcaList` TEXT(256) NOT NULL,
 	PRIMARY KEY (`id`)
 );
@@ -106,8 +107,8 @@ CREATE TABLE `SPAA_reinforcementRCA` (
 USE `results_db`;
 DROP TABLE IF EXISTS `SPAA_anomalyDetectionRCA`;
 CREATE TABLE `SPAA_anomalyDetectionRCA` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`ts_id` TIMESTAMP NOT NULL,
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`ts` TIMESTAMP NOT NULL,
 	`reportedAD` INT NOT NULL,
 	`reportedRCA` INT NOT NULL,
 	`rca` TEXT(256) NOT NULL,
@@ -119,8 +120,8 @@ CREATE TABLE `SPAA_anomalyDetectionRCA` (
 USE `results_db`;
 DROP TABLE IF EXISTS `SPAA_reinforcementAD`;
 CREATE TABLE `SPAA_reinforcementAD` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`ts_id` TIMESTAMP NOT NULL,
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`ts` TIMESTAMP NOT NULL,
 	`label` TEXT(24) NOT NULL,
 	PRIMARY KEY (`id`)
 );
