@@ -2,7 +2,7 @@ USE `results_db`;
 DROP TABLE IF EXISTS `SPAA_timeframes`;
 CREATE TABLE `SPAA_timeframes` (
         `id` BIGINT NOT NULL AUTO_INCREMENT,
-	`ts` TIMESTAMP NOT NULL,
+		`ts` TIMESTAMP NOT NULL,
 	`DS_Speed_Conveyor1_Actual_V2`  FLOAT NOT NULL,
 	`DS_Speed_Conveyor1_Setpoint_V2` FLOAT NOT NULL,
 	`EX_DC_Cooling_Temperature_Actual` FLOAT NOT NULL,
@@ -122,6 +122,26 @@ DROP TABLE IF EXISTS `SPAA_reinforcementAD`;
 CREATE TABLE `SPAA_reinforcementAD` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT,
 	`ts` TIMESTAMP NOT NULL,
-	`label` TEXT(24) NOT NULL,
+	`used_for_train` INT NOT NULL DEFAULT 0,
+	PRIMARY KEY (`id`)
+);
+
+USE `results_db`;
+DROP TABLE IF EXISTS `SPAA_currentMetrics`;
+CREATE TABLE `SPAA_currentMetrics` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`ts` TIMESTAMP NOT NULL,
+	`length` FLOAT NOT NULL DEFAULT '-1',
+	`length_color` TEXT(24),
+	`width` FLOAT NOT NULL DEFAULT '-1',
+	`width_color` TEXT(24),
+	`piece_weight` FLOAT NOT NULL DEFAULT '-1',
+	`piece_weight_color` TEXT(24),
+	`meter_weight` FLOAT NOT NULL DEFAULT '-1',
+	`meter_weight_color` TEXT(24),
+	`thickness_left_plate` FLOAT NOT NULL DEFAULT '-1',
+	`thickness_left_plate_color` TEXT(24),
+	`thickness_right_plate` FLOAT NOT NULL DEFAULT '-1',
+	`thickness_right_plate_color` TEXT(24),
 	PRIMARY KEY (`id`)
 );
